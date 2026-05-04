@@ -281,7 +281,7 @@
             background: rgba(0, 0, 0, 0.25);
         }
         .accordion-item.open .accordion-body {
-            max-height: 4000px;
+            max-height: 6000px;
             padding: 5px 20px 22px;
         }
         .accordion-body p,
@@ -355,6 +355,51 @@
         .svg-illustration svg {
             max-width: 100%;
             height: auto;
+        }
+
+        /* Ilustrações customizadas para espectro */
+        .spectrum-bar {
+            display: flex;
+            width: 100%;
+            height: 40px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 10px 0;
+            font-size: 0.7rem;
+            color: #fff;
+            text-shadow: 1px 1px 2px #000;
+        }
+        .spectrum-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+        .spectrum-labels {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            color: #a0a8b8;
+            font-size: 0.7rem;
+            margin-top: 4px;
+        }
+        .vis-spectrum {
+            background: linear-gradient(to right, #4b0082, #0000ff, #00ffff, #00ff00, #ffff00, #ff7f00, #ff0000);
+            width: 100%;
+            height: 30px;
+            border-radius: 6px;
+            margin: 10px 0;
+            position: relative;
+        }
+        .vis-label {
+            position: absolute;
+            top: 32px;
+            transform: translateX(-50%);
+            color: #cccccc;
+            font-size: 0.65rem;
+            white-space: nowrap;
         }
 
         /* Mensagens motivacionais */
@@ -459,6 +504,10 @@
             }
             table {
                 font-size: 0.78rem;
+            }
+            .vis-label {
+                font-size: 0.55rem;
+                top: 34px;
             }
         }
     </style>
@@ -680,6 +729,12 @@
                 </div>
             </div>
 
+            <!-- Questão exemplo nível 2 -->
+            <div class="tip-card">
+                <span class="tip-icon">📝</span>
+                <p><strong>Exemplo OBA - Nível 2:</strong> Se em Brasília (45°O) são 12h, que horas serão em Londres (0°)? <br> <em>Resposta: 15h (45° ÷ 15° = 3 fusos para leste ➔ 12h + 3h = 15h).</em></p>
+            </div>
+
             <!-- Mensagem motivacional nível 2 -->
             <div class="motivational-card">
                 <span class="emoji-big">🌟</span>
@@ -778,6 +833,13 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Questão exemplo nível 3 -->
+            <div class="tip-card">
+                <span class="tip-icon">📝</span>
+                <p><strong>Exemplo OBA - Nível 3:</strong> Um planeta orbita uma estrela com período de 8 anos e distância média de 4 UA. Um segundo planeta orbita a mesma estrela a 9 UA. Qual o período do segundo? <br> <em>Resposta: Pela 3ª Lei de Kepler, T² ∝ a³. (8)² / (4)³ = T² / (9)³ ➔ 64/64 = T²/729 ➔ T² = 729 ➔ T = 27 anos.</em></p>
+            </div>
+
             <div class="motivational-card">
                 <span class="emoji-big">🪐</span>
                 <p class="quote">"A astronomia é a ciência que nos ensina o nosso lugar no Universo. Estudar o céu é entender a nós mesmos."</p>
@@ -800,20 +862,45 @@
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">🌈</span> Espectro eletromagnético, ondas, Efeito Doppler<span class="arrow">▼</span></div>
                         <div class="accordion-body">
-                            <p><strong>Espectro eletromagnético:</strong> Conjunto de todas as frequências de radiação — ondas de rádio, micro-ondas, infravermelho, luz visível, ultravioleta, raios X e raios gama.</p>
-                            <p><strong>Relação fundamental:</strong> <strong>c = λ · f</strong> (velocidade da luz = comprimento de onda × frequência). c = 300.000 km/s no vácuo.</p>
-                            <p><strong>Efeito Doppler:</strong> Desvio da frequência observada devido ao movimento relativo. Aproximação → desvio para o azul (blue shift); afastamento → desvio para o vermelho (red shift).</p>
-                            <div class="svg-illustration">
-                                <svg viewBox="0 0 400 100" width="100%" height="100">
-                                    <rect x="10" y="20" width="40" height="55" fill="#4a6fa5" rx="2"/>
-                                    <rect x="55" y="28" width="35" height="47" fill="#5b8cc4" rx="2"/>
-                                    <rect x="95" y="34" width="30" height="40" fill="#6daae0" rx="2"/>
-                                    <rect x="130" y="38" width="28" height="35" fill="#9ec8f0" rx="2"/>
-                                    <rect x="162" y="40" width="25" height="31" fill="#bdd8f8" rx="2"/>
-                                    <rect x="190" y="42" width="25" height="28" fill="#d4e8fc" rx="2"/>
-                                    <rect x="218" y="43" width="22" height="26" fill="#eaf4ff" rx="2"/>
-                                    <text x="200" y="88" text-anchor="middle" fill="#aaa" font-size="10">Espectro visível (simplificado)</text>
-                                </svg>
+                            <p><strong>Espectro eletromagnético:</strong> Conjunto de todas as frequências de radiação eletromagnética. A luz visível é apenas uma pequena parte desse espectro. Em ordem crescente de frequência (e decrescente de comprimento de onda), temos: <strong>ondas de rádio, micro-ondas, infravermelho, luz visível, ultravioleta, raios X e raios gama</strong>.</p>
+                            <p><strong>Relação fundamental:</strong> <strong>c = λ · f</strong> (velocidade da luz = comprimento de onda × frequência). c ≈ 3,00 × 10⁸ m/s no vácuo.</p>
+                            <p><strong>Radiação ionizante e não ionizante:</strong> Radiações com comprimento de onda muito curto (alta frequência), como raios X e raios gama, possuem energia suficiente para arrancar elétrons dos átomos — são <strong>ionizantes</strong> e podem danificar tecidos vivos. Ultravioleta extremo também é ionizante. As demais (rádio, micro-ondas, infravermelho, luz visível e parte do UV) são <strong>não ionizantes</strong>.</p>
+                            
+                            <!-- Ilustração do espectro completo -->
+                            <div style="margin: 20px 0;">
+                                <p style="font-weight:700; color:#ffd966; margin-bottom:8px;">🔹 Espectro Eletromagnético Completo</p>
+                                <div class="spectrum-bar" style="height: 50px; font-size:0.75rem;">
+                                    <div class="spectrum-segment" style="width:18%; background:#2e4a7a;">Ondas de Rádio<br>10⁶ m</div>
+                                    <div class="spectrum-segment" style="width:12%; background:#3a5a8c;">Micro-ondas<br>1 m</div>
+                                    <div class="spectrum-segment" style="width:14%; background:#8b3a3a;">Infravermelho<br>10⁻⁴ m</div>
+                                    <div class="spectrum-segment" style="width:8%; background:linear-gradient(to right, red, violet);">Luz Visível<br>700–400 nm</div>
+                                    <div class="spectrum-segment" style="width:10%; background:#6a3a8b;">UV<br>10⁻⁸ m</div>
+                                    <div class="spectrum-segment" style="width:10%; background:#3a5a9b;">Raios-X<br>10⁻¹² m</div>
+                                    <div class="spectrum-segment" style="width:8%; background:#7a3a5a;">Raios Gama<br>10⁻¹⁴ m</div>
+                                </div>
+                                <div style="display:flex; justify-content: space-between; color:#a0a8b8; font-size:0.7rem; margin-top:4px;">
+                                    <span>Baixa frequência</span><span>Alta frequência</span>
+                                </div>
+                                <p style="font-size:0.8rem; color:#a0a8b8; margin-top:8px;">⬅️ Maior comprimento de onda (λ) &nbsp;&nbsp; | &nbsp;&nbsp; Menor comprimento de onda (λ) ➔</p>
+                            </div>
+
+                            <!-- Ilustração detalhada da luz visível -->
+                            <div style="margin: 20px 0;">
+                                <p style="font-weight:700; color:#ffd966; margin-bottom:8px;">🔸 Luz Visível (ampliada)</p>
+                                <div class="vis-spectrum" style="position:relative;">
+                                    <span class="vis-label" style="left:0%;">400 nm<br>Violeta</span>
+                                    <span class="vis-label" style="left:25%;">~500 nm<br>Azul/Ciano</span>
+                                    <span class="vis-label" style="left:50%;">~550 nm<br>Verde</span>
+                                    <span class="vis-label" style="left:75%;">~600 nm<br>Amarelo/Laranja</span>
+                                    <span class="vis-label" style="left:100%;">700 nm<br>Vermelho</span>
+                                </div>
+                                <p style="font-size:0.8rem; color:#a0a8b8; margin-top:28px;">A luz visível vai de aproximadamente 400 nm (violeta) a 700 nm (vermelho).</p>
+                            </div>
+
+                            <p><strong>Efeito Doppler:</strong> Desvio da frequência observada devido ao movimento relativo entre fonte e observador. Se aproximando → <strong>desvio para o azul</strong> (blue shift, frequência maior). Se afastando → <strong>desvio para o vermelho</strong> (red shift, frequência menor). Aplicação: medição da velocidade de estrelas e galáxias.</p>
+                            <div class="tip-card">
+                                <span class="tip-icon">💡</span>
+                                <p><strong>Dica OBA:</strong> A fórmula do Efeito Doppler para ondas eletromagnéticas (não relativística) é Δλ/λ₀ = v/c, onde v é a velocidade radial.</p>
                             </div>
                         </div>
                     </div>
@@ -841,6 +928,13 @@
                                     <tr><td>Sirius</td><td class="num">-1,46</td><td class="num">+1,4</td></tr>
                                     <tr><td>Betelgeuse</td><td class="num">+0,5</td><td class="num">-5,1</td></tr>
                                 </table>
+                            </div>
+                            <div class="highlight-box">
+                                <strong>📐 Fórmulas importantes (Nível 4):</strong><br>
+                                • Fluxo: F = L / (4πd²) <br>
+                                • Módulo de distância: m – M = 5·log₁₀(d/10) <br>
+                                • Lei de Hubble: v = H₀·d <br>
+                                • Força gravitacional: F = G·M·m / r²
                             </div>
                         </div>
                     </div>
@@ -884,6 +978,13 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Questão exemplo nível 4 -->
+            <div class="tip-card">
+                <span class="tip-icon">📝</span>
+                <p><strong>Exemplo OBA - Nível 4:</strong> Uma estrela tem magnitude aparente m = +12 e está a 100 parsecs. Qual sua magnitude absoluta? <br> <em>Resposta: M = m – 5·log₁₀(d/10) = 12 – 5·log₁₀(10) = 12 – 5 = +7.</em></p>
+            </div>
+
             <div class="motivational-card">
                 <span class="emoji-big">🌠</span>
                 <p class="quote">"O impossível é apenas uma questão de tempo. A física nos mostra o caminho, a engenharia constrói a ponte."</p>
@@ -935,14 +1036,9 @@
             document.querySelectorAll('.accordion-header').forEach(header => {
                 header.addEventListener('click', () => {
                     const item = header.parentElement;
-                    const isOpen = item.classList.contains('open');
-                    // Fecha todos os outros no mesmo nível? Opcional: mantém múltiplos abertos.
                     item.classList.toggle('open');
                 });
             });
-
-            // Abre primeiro item de cada seção como demonstração (opcional)
-            // document.querySelectorAll('.accordion-item').forEach((item, i) => { if(i%4===0) item.classList.add('open'); });
         })();
     </script>
 </body>
