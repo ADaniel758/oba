@@ -21,13 +21,11 @@
             --radius-sm: 10px;
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
             background: var(--bg);
@@ -40,7 +38,6 @@
                 radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
             background-attachment: fixed;
         }
-
         .stars {
             position: fixed;
             top: 0;
@@ -49,7 +46,6 @@
             height: 100%;
             pointer-events: none;
             z-index: 0;
-            background: transparent;
         }
         .star-dot {
             position: absolute;
@@ -68,7 +64,6 @@
                 opacity: 0.9;
             }
         }
-
         .container {
             max-width: 1050px;
             margin: 0 auto;
@@ -76,8 +71,6 @@
             position: relative;
             z-index: 1;
         }
-
-        /* Header */
         header {
             text-align: center;
             padding: 45px 25px 25px;
@@ -135,8 +128,6 @@
             margin-top: 6px;
             letter-spacing: 0.5px;
         }
-
-        /* Navegação */
         .nav-tabs {
             display: flex;
             justify-content: center;
@@ -186,7 +177,6 @@
             background: rgba(0, 0, 0, 0.2);
             color: #0a0f1e;
         }
-
         .level-content {
             display: none;
             animation: fadeSlide 0.45s ease;
@@ -204,8 +194,6 @@
                 transform: translateY(0);
             }
         }
-
-        /* Seções */
         .subject-section {
             margin-bottom: 35px;
         }
@@ -223,8 +211,6 @@
         .subject-title .icon {
             font-size: 2rem;
         }
-
-        /* Accordion */
         .accordion {
             display: flex;
             flex-direction: column;
@@ -281,7 +267,7 @@
             background: rgba(0, 0, 0, 0.25);
         }
         .accordion-item.open .accordion-body {
-            max-height: 6000px;
+            max-height: 8000px;
             padding: 5px 20px 22px;
         }
         .accordion-body p,
@@ -310,8 +296,6 @@
             font-style: italic;
             color: #e8d89e;
         }
-
-        /* Tabelas */
         .info-table-wrap {
             overflow-x: auto;
             margin: 16px 0;
@@ -343,8 +327,6 @@
             text-align: right;
             font-variant-numeric: tabular-nums;
         }
-
-        /* SVG / Gráficos inline */
         .svg-illustration {
             text-align: center;
             margin: 16px 0;
@@ -356,8 +338,6 @@
             max-width: 100%;
             height: auto;
         }
-
-        /* Ilustrações customizadas para espectro */
         .spectrum-bar {
             display: flex;
             width: 100%;
@@ -377,14 +357,6 @@
             font-weight: 700;
             transition: 0.2s;
         }
-        .spectrum-labels {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            color: #a0a8b8;
-            font-size: 0.7rem;
-            margin-top: 4px;
-        }
         .vis-spectrum {
             background: linear-gradient(to right, #4b0082, #0000ff, #00ffff, #00ff00, #ffff00, #ff7f00, #ff0000);
             width: 100%;
@@ -401,8 +373,6 @@
             font-size: 0.65rem;
             white-space: nowrap;
         }
-
-        /* Mensagens motivacionais */
         .motivational-card {
             background: linear-gradient(135deg, rgba(90, 155, 220, 0.1), rgba(240, 200, 80, 0.08));
             border: 1px solid rgba(240, 200, 80, 0.25);
@@ -439,8 +409,6 @@
             display: block;
             margin-bottom: 6px;
         }
-
-        /* Cards de dica */
         .tip-card {
             background: rgba(90, 155, 220, 0.08);
             border: 1px solid rgba(90, 155, 220, 0.3);
@@ -460,8 +428,6 @@
             color: #bcc8da;
             font-size: 0.9rem;
         }
-
-        /* Footer */
         footer {
             text-align: center;
             padding: 25px 20px;
@@ -486,7 +452,57 @@
         footer .pix-info span {
             color: #f0c850;
         }
-
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal-content {
+            background: #0a0f1e;
+            border: 1px solid var(--border-gold);
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 25px;
+            position: relative;
+            color: var(--text);
+        }
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            background: none;
+            border: none;
+            color: var(--gold);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .btn-link {
+            display: inline-block;
+            background: var(--gold);
+            color: #0a0f1e;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            margin: 10px 0;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-link:hover {
+            box-shadow: 0 0 20px rgba(240, 200, 80, 0.5);
+        }
         @media (max-width: 700px) {
             header h1 {
                 font-size: 1.7rem;
@@ -513,24 +529,18 @@
     </style>
 </head>
 <body>
-
-    <!-- Estrelas de fundo -->
     <div class="stars" id="starsContainer"></div>
-
     <div class="container">
         <header>
             <span class="logo-icon">🌌</span>
             <h1>Preparação OBA</h1>
             <p>Olimpíada Brasileira de Astronomia e Astronáutica — Guia Especialista</p>
         </header>
-
-        <!-- Mensagem motivacional fixa no topo -->
         <div class="motivational-card">
             <span class="emoji-big">🚀</span>
             <p class="quote">"O céu não é o limite — é apenas o começo da jornada."</p>
             <p class="author">— Lema dos exploradores espaciais</p>
         </div>
-
         <div class="nav-tabs">
             <button class="nav-btn active" data-level="2">🌍 Nível 2 <span class="badge">4º e 5º ano</span></button>
             <button class="nav-btn" data-level="3">🪐 Nível 3 <span class="badge">6º ao 9º ano</span></button>
@@ -542,7 +552,6 @@
             <div class="subject-section">
                 <div class="subject-title"><span class="icon">🔭</span> Astronomia — Nível 2</div>
                 <div class="accordion">
-
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">🌍</span> Terra: origem, estrutura, forma, marés, atmosfera, rotação, polos, equador, pontos cardeais, bússola, dia/noite, fusos<span class="arrow">▼</span></div>
                         <div class="accordion-body">
@@ -578,7 +587,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">🌙</span> Lua: fases, meses e eclipses<span class="arrow">▼</span></div>
                         <div class="accordion-body">
@@ -618,7 +626,6 @@
                             <div class="highlight-box">🔍 <strong>Curiosidade:</strong> Os eclipses não ocorrem todo mês porque a órbita da Lua é inclinada ~5° em relação à eclíptica.</div>
                         </div>
                     </div>
-
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">☀️</span> Sol: translação, eclíptica, ano, estações do ano<span class="arrow">▼</span></div>
                         <div class="accordion-body">
@@ -636,7 +643,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">🪐</span> Sistema Solar, galáxias, estrelas, ano-luz, origem do Universo, História da Astronomia<span class="arrow">▼</span></div>
                         <div class="accordion-body">
@@ -648,7 +654,6 @@
                             <p><strong>História da Astronomia:</strong> Civilizações antigas (babilônios, egípcios, gregos) já observavam o céu. Ptolomeu (modelo geocêntrico), Copérnico (heliocêntrico), Galileu (uso do telescópio), Kepler (leis orbitais), Newton (gravitação).</p>
                         </div>
                     </div>
-
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">⭐</span> Constelações e reconhecimento do céu<span class="arrow">▼</span></div>
                         <div class="accordion-body">
@@ -663,35 +668,47 @@
                     </div>
                 </div>
             </div>
-
             <div class="subject-section">
                 <div class="subject-title"><span class="icon">🚀</span> Astronáutica — Nível 2</div>
                 <div class="accordion">
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">🇧🇷</span> Missão Centenário (Marcos Pontes, 2006)<span class="arrow">▼</span></div>
                         <div class="accordion-body">
-                            <p>Em <strong>30 de março de 2006</strong>, o tenente-coronel <strong>Marcos César Pontes</strong> tornou-se o primeiro astronauta brasileiro a ir ao espaço. A bordo da nave russa <strong>Soyuz TMA-8</strong>, ele passou 8 dias na Estação Espacial Internacional (ISS), realizando experimentos científicos, incluindo um sobre crescimento de feijão em microgravidade.</p>
+                            <p>Em <strong>30 de março de 2006</strong>, o tenente-coronel <strong>Marcos César Pontes</strong> tornou-se o primeiro astronauta brasileiro a ir ao espaço. A bordo da nave russa <strong>Soyuz TMA-8</strong>, ele passou 8 dias na Estação Espacial Internacional (ISS), realizando experimentos científicos.</p>
                             <div class="highlight-box">🇧🇷 A missão foi batizada de "Centenário" em homenagem aos 100 anos do voo de Santos Dumont no 14-Bis (1906).</div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">🚀</span> Foguetes e Satélites: o que são e para que servem?<span class="arrow">▼</span></div>
                         <div class="accordion-body">
-                            <p><strong>Foguetes:</strong> Veículos que usam o princípio da <strong>ação e reação</strong> (3ª Lei de Newton) para se deslocar. Queimam propelente em câmaras de combustão e expelem gases em alta velocidade, gerando empuxo.</p>
-                            <p><strong>Satélites artificiais:</strong> Dispositivos colocados em órbita da Terra (ou outros corpos) para diversas finalidades: comunicação, GPS, meteorologia, sensoriamento remoto, pesquisa científica, defesa.</p>
+                            <p><strong>Foguetes:</strong> Veículos que usam o princípio da <strong>ação e reação</strong> (3ª Lei de Newton) para se deslocar. Queimam propelente e expelem gases em alta velocidade, gerando empuxo.</p>
+                            <p><strong>Satélites artificiais:</strong> Dispositivos em órbita para comunicação, GPS, meteorologia, sensoriamento remoto, pesquisa científica. Os satélites meteorológicos (ex.: GOES) preveem o tempo; os de sensoriamento remoto (ex.: CBERS) mapeiam a Terra.</p>
+                            <div class="info-table-wrap">
+                                <table>
+                                    <tr><th>Tipo de Satélite</th><th>Função</th><th>Exemplo</th></tr>
+                                    <tr><td>Comunicação</td><td>Transmitir sinais de TV, internet, telefonia</td><td>Starlink, Brasilsat</td></tr>
+                                    <tr><td>Meteorológico</td><td>Previsão do tempo, monitoramento de tempestades</td><td>GOES, Meteosat</td></tr>
+                                    <tr><td>Sensoriamento Remoto</td><td>Imagens da superfície terrestre, desmatamento</td><td>CBERS, Amazônia-1</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="header-icon">🛰️</span> Estação Espacial Internacional (ISS) e Telescópios Espaciais<span class="arrow">▼</span></div>
+                        <div class="accordion-body">
+                            <p><strong>ISS:</strong> Laboratório orbital multinacional (NASA, Roscosmos, ESA, Japão, Canadá) habitado desde 2000. Realiza pesquisas em microgravidade.</p>
+                            <p><strong>Telescópios Espaciais:</strong></p>
+                            <ul>
+                                <li><strong>Hubble (1990):</strong> Imagens no visível e ultravioleta, revolucionou a astronomia.</li>
+                                <li><strong>James Webb (2021):</strong> Infravermelho, observa as primeiras galáxias e exoplanetas.</li>
+                            </ul>
+                            <div class="highlight-box">🔭 O telescópio Hubble está a 547 km da Terra e já fez mais de 1,5 milhão de observações!</div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">🌬️</span> A atmosfera e sua importância para a vida<span class="arrow">▼</span></div>
                         <div class="accordion-body">
-                            <p>A atmosfera terrestre é essencial para a vida:</p>
-                            <ul>
-                                <li>Fornece <strong>oxigênio</strong> para respiração.</li>
-                                <li>Protege contra <strong>radiação ultravioleta</strong> (camada de ozônio).</li>
-                                <li>Regula a <strong>temperatura</strong> (efeito estufa natural).</li>
-                                <li>Queima <strong>meteoroides</strong> por atrito antes de atingirem a superfície.</li>
-                                <li>Permite o <strong>ciclo da água</strong> (evaporação, nuvens, chuva).</li>
-                            </ul>
+                            <p>A atmosfera terrestre é essencial: fornece oxigênio, protege contra radiação UV (camada de ozônio), regula a temperatura (efeito estufa natural), queima meteoroides e permite o ciclo da água.</p>
                         </div>
                     </div>
                     <div class="accordion-item">
@@ -704,9 +721,9 @@
                         <div class="accordion-header"><span class="header-icon">🇧🇷</span> Satélites brasileiros (SCD, CBERS, AMAZÔNIA)<span class="arrow">▼</span></div>
                         <div class="accordion-body">
                             <ul>
-                                <li><strong>SCD-1 e SCD-2:</strong> Satélites de Coleta de Dados — recebem informações de plataformas ambientais espalhadas pelo Brasil.</li>
-                                <li><strong>CBERS:</strong> Satélite Sino-Brasileiro de Recursos Terrestres — parceria com a China para sensoriamento remoto (imagens da Terra).</li>
-                                <li><strong>AMAZÔNIA-1:</strong> Primeiro satélite 100% projetado e operado pelo Brasil, lançado em 2021, para monitoramento da Amazônia.</li>
+                                <li><strong>SCD-1 e SCD-2:</strong> Satélites de Coleta de Dados — informações ambientais.</li>
+                                <li><strong>CBERS:</strong> Satélite Sino-Brasileiro de Recursos Terrestres — sensoriamento remoto.</li>
+                                <li><strong>AMAZÔNIA-1:</strong> Primeiro satélite 100% brasileiro, lançado em 2021, monitora a Amazônia.</li>
                             </ul>
                         </div>
                     </div>
@@ -726,16 +743,23 @@
                             </div>
                         </div>
                     </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="header-icon">🌍</span> Agências Espaciais pelo Mundo<span class="arrow">▼</span></div>
+                        <div class="accordion-body">
+                            <p><strong>NASA (EUA):</strong> Exploração humana, sondas, telescópios Hubble/Webb, Artemis.</p>
+                            <p><strong>Roscosmos (Rússia):</strong> Foguetes Soyuz, módulos da ISS, planos para estação própria (ROSS).</p>
+                            <p><strong>ESA (Europa):</strong> Foguetes Ariane, missões JUICE (Júpiter) e Euclid.</p>
+                            <p><strong>CNSA (China):</strong> Estação Tiangong, rover em Marte, coleta de amostras lunares.</p>
+                            <p><strong>ISRO (Índia):</strong> Chandrayaan-3 (pouso lunar 2023), missão solar Aditya-L1.</p>
+                            <p><strong>JAXA (Japão):</strong> Sonda Hayabusa (amostra de asteroide), módulo Kibo da ISS.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Questão exemplo nível 2 -->
             <div class="tip-card">
                 <span class="tip-icon">📝</span>
                 <p><strong>Exemplo OBA - Nível 2:</strong> Se em Brasília (45°O) são 12h, que horas serão em Londres (0°)? <br> <em>Resposta: 15h (45° ÷ 15° = 3 fusos para leste ➔ 12h + 3h = 15h).</em></p>
             </div>
-
-            <!-- Mensagem motivacional nível 2 -->
             <div class="motivational-card">
                 <span class="emoji-big">🌟</span>
                 <p class="quote">"Cada estrela que você vê no céu é um sol que pode ter planetas ao seu redor. A curiosidade é o primeiro passo para o conhecimento."</p>
@@ -760,6 +784,7 @@
                             <p><strong>Equinócios:</strong> Dias e noites com duração igual (12h cada). Ocorrem em março e setembro.</p>
                             <p><strong>Zonas térmicas:</strong> Tropical (entre trópicos), Temperadas (entre trópicos e círculos polares) e Polares (acima dos círculos polares).</p>
                             <p><strong>Horário de verão:</strong> Adiantamento de 1 hora para aproveitar melhor a luz solar. No Brasil foi aplicado até 2019.</p>
+                            <p><strong>Gravitação e peso:</strong> Força gravitacional (peso) P = m·g, onde g varia com altitude e latitude (~9,8 m/s² na superfície).</p>
                         </div>
                     </div>
                     <div class="accordion-item">
@@ -797,23 +822,37 @@
                             </div>
                         </div>
                     </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="header-icon">🪐</span> Sistema Solar: descrição, origem, corpos celestes<span class="arrow">▼</span></div>
+                        <div class="accordion-body">
+                            <p><strong>Formação:</strong> Nebulosa solar colapsou há 4,6 bi de anos. Planetas rochosos (Mercúrio, Vênus, Terra, Marte) e gasosos (Júpiter, Saturno, Urano, Netuno). Cinturão de asteroides entre Marte e Júpiter. Cinturão de Kuiper (Plutão). Nuvem de Oort (cometas).</p>
+                            <div class="info-table-wrap">
+                                <table>
+                                    <tr><th>Planeta</th><th>Tipo</th><th>Distância do Sol (UA)</th></tr>
+                                    <tr><td>Mercúrio</td><td>Rochoso</td><td class="num">0,39</td></tr>
+                                    <tr><td>Vênus</td><td>Rochoso</td><td class="num">0,72</td></tr>
+                                    <tr><td>Terra</td><td>Rochoso</td><td class="num">1,00</td></tr>
+                                    <tr><td>Marte</td><td>Rochoso</td><td class="num">1,52</td></tr>
+                                    <tr><td>Júpiter</td><td>Gasoso</td><td class="num">5,20</td></tr>
+                                    <tr><td>Saturno</td><td>Gasoso</td><td class="num">9,58</td></tr>
+                                    <tr><td>Urano</td><td>Gasoso</td><td class="num">19,2</td></tr>
+                                    <tr><td>Netuno</td><td>Gasoso</td><td class="num">30,0</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
             <div class="subject-section">
                 <div class="subject-title"><span class="icon">🚀</span> Astronáutica — Nível 3</div>
                 <div class="accordion">
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">🔴</span> Exploração de Marte<span class="arrow">▼</span></div>
-                        <div class="accordion-body">
-                            <p>Marte é o planeta mais explorado depois da Terra. Rovers como <strong>Curiosity</strong> (2012) e <strong>Perseverance</strong> (2021) buscam evidências de vida passada. O helicóptero <strong>Ingenuity</strong> fez o primeiro voo em outro planeta.</p>
-                        </div>
+                        <div class="accordion-body"><p>Rovers Curiosity, Perseverance. Helicóptero Ingenuity. China (Zhurong), UAE (Hope).</p></div>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">🩺</span> O corpo humano no espaço<span class="arrow">▼</span></div>
-                        <div class="accordion-body">
-                            <p>Na microgravidade: perda de massa muscular e óssea, estatura aumenta (discos da coluna expandem), rosto incha (fluidos sobem). Exercícios diários e trajes especiais minimizam os efeitos.</p>
-                        </div>
+                        <div class="accordion-body"><p>Perda óssea/muscular, fluidos sobem, radiação. Exercícios e trajes minimizam efeitos.</p></div>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">🏗️</span> Foguetes: Saturno, Ariane, Soyuz, Próton, SpaceX, Projeto Artemis<span class="arrow">▼</span></div>
@@ -828,18 +867,38 @@
                                     <tr><td>Starship</td><td>SpaceX</td><td>Projetado para missões lunares e marcianas</td></tr>
                                 </table>
                             </div>
-                            <p><strong>Projeto Artemis:</strong> Programa da NASA para levar humanos de volta à Lua (incluindo a primeira mulher) e estabelecer presença sustentável.</p>
+                            <p><strong>Projeto Artemis:</strong> Programa da NASA para levar humanos de volta à Lua (primeira mulher) e estabelecer presença sustentável.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="header-icon">🌐</span> Programas Espaciais Mundiais<span class="arrow">▼</span></div>
+                        <div class="accordion-body">
+                            <p><strong>NASA:</strong> Artemis, James Webb, DART.</p>
+                            <p><strong>Roscosmos:</strong> Estação própria (ROSS) prevista.</p>
+                            <p><strong>CNSA:</strong> Estação Tiangong, planos para pouso lunar tripulado 2030.</p>
+                            <p><strong>ISRO:</strong> Chandrayaan-3 (pouso lunar 2023), Gaganyaan.</p>
+                            <p><strong>ESA:</strong> JUICE, Euclid.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="header-icon">❓</span> Por que o Brasil deve possuir um Programa Espacial?<span class="arrow">▼</span></div>
+                        <div class="accordion-body">
+                            <p>Soberania nacional, monitoramento do território (Amazônia, agricultura), comunicação, desenvolvimento tecnológico e econômico, geração de empregos qualificados.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="header-icon">🌍</span> Efeito estufa e buraco na camada de ozônio<span class="arrow">▼</span></div>
+                        <div class="accordion-body">
+                            <p><strong>Efeito estufa:</strong> Gases (CO₂, metano) retêm calor — essencial para a vida, mas intensificado pela ação humana causa aquecimento global.</p>
+                            <p><strong>Buraco de ozônio:</strong> Destruição da camada de ozônio por CFCs, aumentando radiação UV. Acordos internacionais reduziram o problema.</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Questão exemplo nível 3 -->
             <div class="tip-card">
                 <span class="tip-icon">📝</span>
                 <p><strong>Exemplo OBA - Nível 3:</strong> Um planeta orbita uma estrela com período de 8 anos e distância média de 4 UA. Um segundo planeta orbita a mesma estrela a 9 UA. Qual o período do segundo? <br> <em>Resposta: Pela 3ª Lei de Kepler, T² ∝ a³. (8)² / (4)³ = T² / (9)³ ➔ 64/64 = T²/729 ➔ T² = 729 ➔ T = 27 anos.</em></p>
             </div>
-
             <div class="motivational-card">
                 <span class="emoji-big">🪐</span>
                 <p class="quote">"A astronomia é a ciência que nos ensina o nosso lugar no Universo. Estudar o céu é entender a nós mesmos."</p>
@@ -854,144 +913,133 @@
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">🧲</span> Lei da Gravitação Universal, Leis de Kepler, Lei de Hubble<span class="arrow">▼</span></div>
                         <div class="accordion-body">
-                            <p><strong>Lei da Gravitação Universal (Newton):</strong> F = G·(M·m)/r². A força gravitacional entre dois corpos é diretamente proporcional ao produto das massas e inversamente proporcional ao quadrado da distância.</p>
-                            <p><strong>G = 6,67 × 10⁻¹¹ N·m²/kg²</strong> (constante gravitacional).</p>
-                            <p><strong>Lei de Hubble:</strong> v = H₀·d. As galáxias se afastam com velocidade proporcional à distância — evidência da expansão do Universo. H₀ ≈ 70 km/s/Mpc.</p>
+                            <p><strong>Lei da Gravitação Universal (Newton):</strong> F = G·(M·m)/r². G = 6,67 × 10⁻¹¹ N·m²/kg².</p>
+                            <p><strong>Lei de Hubble:</strong> v = H₀·d. Expansão do Universo. H₀ ≈ 70 km/s/Mpc.</p>
+                            <p><strong>Campo gravitacional terrestre:</strong> g = G·M/r², varia com altitude e latitude.</p>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">🌈</span> Espectro eletromagnético, ondas, Efeito Doppler<span class="arrow">▼</span></div>
                         <div class="accordion-body">
-                            <p><strong>Espectro eletromagnético:</strong> Conjunto de todas as frequências de radiação eletromagnética. A luz visível é apenas uma pequena parte desse espectro. Em ordem crescente de frequência (e decrescente de comprimento de onda), temos: <strong>ondas de rádio, micro-ondas, infravermelho, luz visível, ultravioleta, raios X e raios gama</strong>.</p>
-                            <p><strong>Relação fundamental:</strong> <strong>c = λ · f</strong> (velocidade da luz = comprimento de onda × frequência). c ≈ 3,00 × 10⁸ m/s no vácuo.</p>
-                            <p><strong>Radiação ionizante e não ionizante:</strong> Radiações com comprimento de onda muito curto (alta frequência), como raios X e raios gama, possuem energia suficiente para arrancar elétrons dos átomos — são <strong>ionizantes</strong> e podem danificar tecidos vivos. Ultravioleta extremo também é ionizante. As demais (rádio, micro-ondas, infravermelho, luz visível e parte do UV) são <strong>não ionizantes</strong>.</p>
-                            
-                            <!-- Ilustração do espectro completo -->
-                            <div style="margin: 20px 0;">
-                                <p style="font-weight:700; color:#ffd966; margin-bottom:8px;">🔹 Espectro Eletromagnético Completo</p>
-                                <div class="spectrum-bar" style="height: 50px; font-size:0.75rem;">
-                                    <div class="spectrum-segment" style="width:18%; background:#2e4a7a;">Ondas de Rádio<br>10⁶ m</div>
-                                    <div class="spectrum-segment" style="width:12%; background:#3a5a8c;">Micro-ondas<br>1 m</div>
-                                    <div class="spectrum-segment" style="width:14%; background:#8b3a3a;">Infravermelho<br>10⁻⁴ m</div>
-                                    <div class="spectrum-segment" style="width:8%; background:linear-gradient(to right, red, violet);">Luz Visível<br>700–400 nm</div>
-                                    <div class="spectrum-segment" style="width:10%; background:#6a3a8b;">UV<br>10⁻⁸ m</div>
-                                    <div class="spectrum-segment" style="width:10%; background:#3a5a9b;">Raios-X<br>10⁻¹² m</div>
-                                    <div class="spectrum-segment" style="width:8%; background:#7a3a5a;">Raios Gama<br>10⁻¹⁴ m</div>
-                                </div>
-                                <div style="display:flex; justify-content: space-between; color:#a0a8b8; font-size:0.7rem; margin-top:4px;">
-                                    <span>Baixa frequência</span><span>Alta frequência</span>
-                                </div>
-                                <p style="font-size:0.8rem; color:#a0a8b8; margin-top:8px;">⬅️ Maior comprimento de onda (λ) &nbsp;&nbsp; | &nbsp;&nbsp; Menor comprimento de onda (λ) ➔</p>
+                            <p><strong>Espectro eletromagnético:</strong> Rádio, micro-ondas, infravermelho, luz visível, ultravioleta, raios X e raios gama.</p>
+                            <p><strong>Relação fundamental:</strong> c = λ · f (c ≈ 3,00 × 10⁸ m/s).</p>
+                            <p><strong>Radiação ionizante:</strong> raios X e gama arrancam elétrons. Demais são não ionizantes.</p>
+                            <div class="spectrum-bar">
+                                <div class="spectrum-segment" style="width:18%; background:#2e4a7a;">Rádio 10⁶ m</div>
+                                <div class="spectrum-segment" style="width:12%; background:#3a5a8c;">Micro-ondas 1 m</div>
+                                <div class="spectrum-segment" style="width:14%; background:#8b3a3a;">IV 10⁻⁴ m</div>
+                                <div class="spectrum-segment" style="width:8%; background:linear-gradient(to right, red, violet);">Visível</div>
+                                <div class="spectrum-segment" style="width:10%; background:#6a3a8b;">UV 10⁻⁸ m</div>
+                                <div class="spectrum-segment" style="width:10%; background:#3a5a9b;">Raios-X 10⁻¹² m</div>
+                                <div class="spectrum-segment" style="width:8%; background:#7a3a5a;">Gama 10⁻¹⁴ m</div>
                             </div>
-
-                            <!-- Ilustração detalhada da luz visível -->
-                            <div style="margin: 20px 0;">
-                                <p style="font-weight:700; color:#ffd966; margin-bottom:8px;">🔸 Luz Visível (ampliada)</p>
-                                <div class="vis-spectrum" style="position:relative;">
-                                    <span class="vis-label" style="left:0%;">400 nm<br>Violeta</span>
-                                    <span class="vis-label" style="left:25%;">~500 nm<br>Azul/Ciano</span>
-                                    <span class="vis-label" style="left:50%;">~550 nm<br>Verde</span>
-                                    <span class="vis-label" style="left:75%;">~600 nm<br>Amarelo/Laranja</span>
-                                    <span class="vis-label" style="left:100%;">700 nm<br>Vermelho</span>
-                                </div>
-                                <p style="font-size:0.8rem; color:#a0a8b8; margin-top:28px;">A luz visível vai de aproximadamente 400 nm (violeta) a 700 nm (vermelho).</p>
+                            <div class="vis-spectrum">
+                                <span class="vis-label" style="left:0;">400 nm Violeta</span>
+                                <span class="vis-label" style="left:25%;">~500 nm Azul</span>
+                                <span class="vis-label" style="left:50%;">~550 nm Verde</span>
+                                <span class="vis-label" style="left:75%;">~600 nm Laranja</span>
+                                <span class="vis-label" style="left:100%;">700 nm Vermelho</span>
                             </div>
-
-                            <p><strong>Efeito Doppler:</strong> Desvio da frequência observada devido ao movimento relativo entre fonte e observador. Se aproximando → <strong>desvio para o azul</strong> (blue shift, frequência maior). Se afastando → <strong>desvio para o vermelho</strong> (red shift, frequência menor). Aplicação: medição da velocidade de estrelas e galáxias.</p>
-                            <div class="tip-card">
-                                <span class="tip-icon">💡</span>
-                                <p><strong>Dica OBA:</strong> A fórmula do Efeito Doppler para ondas eletromagnéticas (não relativística) é Δλ/λ₀ = v/c, onde v é a velocidade radial.</p>
-                            </div>
+                            <p style="margin-top:30px;"><strong>Efeito Doppler:</strong> aproximação → blueshift, afastamento → redshift. Δλ/λ₀ ≈ v/c.</p>
+                            <p><strong>Magnetismo terrestre:</strong> Campo magnético gerado no núcleo externo líquido, protege contra vento solar (auroras).</p>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <div class="accordion-header"><span class="header-icon">⭐</span> Evolução estelar: manchas solares, anãs brancas, pulsares, buracos negros<span class="arrow">▼</span></div>
+                        <div class="accordion-header"><span class="header-icon">⭐</span> Evolução estelar e estágios finais<span class="arrow">▼</span></div>
                         <div class="accordion-body">
-                            <p><strong>Manchas solares:</strong> Regiões mais frias e escuras na superfície do Sol, associadas a intensa atividade magnética. Ciclo de ~11 anos.</p>
-                            <p><strong>Evolução estelar (resumo):</strong></p>
-                            <ul>
-                                <li>Estrelas como o Sol → gigante vermelha → nebulosa planetária → <strong>anã branca</strong>.</li>
-                                <li>Estrelas massivas → supergigante → supernova → <strong>estrela de nêutrons</strong> (pulsar) ou <strong>buraco negro</strong>.</li>
-                            </ul>
-                            <p><strong>Buraco negro:</strong> Região do espaço-tempo onde a gravidade é tão intensa que nada escapa, nem a luz.</p>
+                            <p><strong>Manchas solares:</strong> regiões mais frias, ciclo 11 anos.</p>
+                            <div class="svg-illustration">
+                                <svg viewBox="0 0 600 120" width="100%">
+                                    <circle cx="60" cy="60" r="20" fill="#ffcc00"/><text x="60" y="95" text-anchor="middle" fill="#ccc" font-size="10">Sequência</text>
+                                    <circle cx="160" cy="50" r="30" fill="#ff6600"/><text x="160" y="95" text-anchor="middle" fill="#ccc" font-size="10">Gigante</text>
+                                    <circle cx="280" cy="60" r="12" fill="#a0c0f0"/><text x="280" y="80" text-anchor="middle" fill="#ccc" font-size="10">Anã Branca</text>
+                                    <path d="M90,60 L140,55" stroke="#fff" marker-end="url(#arrow)"/>
+                                    <path d="M195,55 L265,60" stroke="#fff" marker-end="url(#arrow)"/>
+                                    <text x="220" y="40" fill="#aaa" font-size="9">Sol</text>
+                                    <circle cx="380" cy="50" r="35" fill="#ff3333"/><text x="380" y="100" text-anchor="middle" fill="#ccc" font-size="10">Supergigante</text>
+                                    <circle cx="500" cy="60" r="10" fill="#333" stroke="#fff"/><text x="500" y="80" text-anchor="middle" fill="#ccc" font-size="10">Buraco Negro</text>
+                                    <circle cx="540" cy="60" r="8" fill="#aaccff"/><text x="540" y="80" text-anchor="middle" fill="#ccc" font-size="10">Estrela de Nêutrons</text>
+                                    <path d="M310,55 L370,50" stroke="#fff" marker-end="url(#arrow)"/>
+                                    <path d="M420,55 L495,60" stroke="#fff" marker-end="url(#arrow)"/>
+                                    <defs><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#fff"/></marker></defs>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">📊</span> Magnitudes aparente e absoluta, fluxo de radiação<span class="arrow">▼</span></div>
                         <div class="accordion-body">
-                            <p><strong>Magnitude aparente (m):</strong> Brilho observado da Terra. <strong>Magnitude absoluta (M):</strong> Brilho que a estrela teria a 10 parsecs (~32,6 anos-luz).</p>
-                            <p><strong>Módulo de distância:</strong> m − M = 5·log₁₀(d/10), onde d é a distância em parsecs.</p>
-                            <div class="info-table-wrap">
-                                <table>
-                                    <tr><th>Estrela</th><th>Magnitude aparente</th><th>Magnitude absoluta</th></tr>
-                                    <tr><td>Sol</td><td class="num">-26,7</td><td class="num">+4,8</td></tr>
-                                    <tr><td>Sirius</td><td class="num">-1,46</td><td class="num">+1,4</td></tr>
-                                    <tr><td>Betelgeuse</td><td class="num">+0,5</td><td class="num">-5,1</td></tr>
-                                </table>
-                            </div>
-                            <div class="highlight-box">
-                                <strong>📐 Fórmulas importantes (Nível 4):</strong><br>
-                                • Fluxo: F = L / (4πd²) <br>
-                                • Módulo de distância: m – M = 5·log₁₀(d/10) <br>
-                                • Lei de Hubble: v = H₀·d <br>
-                                • Força gravitacional: F = G·M·m / r²
-                            </div>
+                            <p>Magnitude aparente m, absoluta M (a 10 pc). m – M = 5·log₁₀(d/10).</p>
+                            <table>
+                                <tr><th>Estrela</th><th>m</th><th>M</th></tr>
+                                <tr><td>Sol</td><td>-26,7</td><td>+4,8</td></tr>
+                                <tr><td>Sirius</td><td>-1,46</td><td>+1,4</td></tr>
+                                <tr><td>Betelgeuse</td><td>+0,5</td><td>-5,1</td></tr>
+                            </table>
+                            <div class="highlight-box">📐 F = L/(4πd²) ; m – M = 5·log₁₀(d/10)</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="header-icon">🌌</span> Galáxias e classificação<span class="arrow">▼</span></div>
+                        <div class="accordion-body">
+                            <p>Galáxias são conjuntos de bilhões de estrelas. Classificação de Hubble: <strong>elípticas</strong> (E), <strong>espirais</strong> (S, como a Via Láctea e Andrômeda), <strong>espirais barradas</strong> (SB) e <strong>irregulares</strong> (Irr). A Via Láctea tem ~100.000 anos-luz de diâmetro.</p>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="subject-section">
                 <div class="subject-title"><span class="icon">🚀</span> Astronáutica — Nível 4</div>
                 <div class="accordion">
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">⚔️</span> Corrida Espacial e Guerra Fria<span class="arrow">▼</span></div>
-                        <div class="accordion-body">
-                            <p>Competição entre EUA e URSS (1947-1991): Sputnik (1957), Yuri Gagarin (1961), Apollo 11 (1969). Impulsionou avanços tecnológicos que usamos até hoje.</p>
-                        </div>
+                        <div class="accordion-body"><p>Sputnik (1957), Gagarin (1961), Apollo 11 (1969). EUA vs URSS impulsionou a tecnologia espacial.</p></div>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">📡</span> Comunicação, velocidades, velocidade de escape, órbitas<span class="arrow">▼</span></div>
                         <div class="accordion-body">
-                            <p><strong>Velocidade orbital baixa (LEO):</strong> ~7,8 km/s.</p>
-                            <p><strong>Velocidade de escape da Terra:</strong> ~11,2 km/s (para vencer totalmente a gravidade terrestre).</p>
-                            <p><strong>Tipos de órbita:</strong></p>
-                            <ul>
-                                <li><strong>LEO (Low Earth Orbit):</strong> 200-2.000 km de altitude (ISS, satélites de observação).</li>
-                                <li><strong>Órbita Polar:</strong> Passa sobre os polos — ideal para sensoriamento remoto global.</li>
-                                <li><strong>GEO (Geoestacionária):</strong> ~35.786 km de altitude, período de 24h — satélite "parado" no céu.</li>
-                            </ul>
+                            <p><strong>Comunicação no espaço:</strong> Ondas de rádio (velocidade da luz) transmitidas para estações terrestres ou satélites.</p>
+                            <p>v orbital LEO ~7,8 km/s; escape ~11,2 km/s.</p>
+                            <p><strong>Órbitas:</strong> LEO (200-2000 km), polar (passa sobre os polos), GEO (35.786 km, período 24h, satélite "parado").</p>
+                            <p><strong>Controle de órbita:</strong> Pequenos propulsores (thrusters) corrigem altitude e posição; rodas de reação controlam orientação.</p>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header"><span class="header-icon">🔥</span> Reentrada atmosférica e propelentes<span class="arrow">▼</span></div>
                         <div class="accordion-body">
-                            <p><strong>Reentrada:</strong> O atrito com a atmosfera em altíssima velocidade gera temperaturas de até 3.000°C. Por isso as naves têm escudos térmicos ablativos.</p>
-                            <p><strong>Propelentes:</strong> Combustível + oxidante. Exemplos: oxigênio líquido + hidrogênio líquido (mais eficiente), querosene (RP-1) + oxigênio, perclorato de amônio (sólido). Cerca de <strong>85-90% da massa</strong> de um foguete é propelente.</p>
+                            <p>Reentrada: atrito aquece a nave a ~3000°C; escudo térmico ablativo protege. 85-90% da massa de um foguete é propelente. Ex.: O₂/H₂ líquidos, querosene, perclorato de amônio (sólido). Propulsão iônica em satélites.</p>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <div class="accordion-header"><span class="header-icon">🌕</span> Projeto Artemis (detalhado)<span class="arrow">▼</span></div>
+                        <div class="accordion-header"><span class="header-icon">🌕</span> Projeto Artemis (detalhado) <span class="arrow">▼</span></div>
                         <div class="accordion-body">
-                            <p>O <strong>Projeto Artemis</strong> (NASA) visa levar humanos à Lua até 2025-2026, incluindo a primeira mulher e o primeiro homem negro. Usará o foguete <strong>SLS</strong> e a nave <strong>Orion</strong>. A estação <strong>Lunar Gateway</strong> orbitará a Lua. Objetivo de longo prazo: presença sustentável e missões a Marte.</p>
+                            <p>Programa da NASA para retorno humano à Lua, primeira mulher e pessoa negra, presença sustentável e preparação para Marte.</p>
+                            <button class="btn-link" id="openArtemisModal">🌕 Abrir Guia Completo do Artemis</button>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header"><span class="header-icon">🌍</span> Iniciativas Espaciais Mundiais (Nível 4) <span class="arrow">▼</span></div>
+                        <div class="accordion-body">
+                            <p><strong>NASA (EUA):</strong> Artemis, Marte, James Webb, DART.</p>
+                            <p><strong>Roscosmos (Rússia):</strong> Estação ROSS, Angara.</p>
+                            <p><strong>CNSA (China):</strong> Estação Tiangong, pouso lunar até 2030, missão a Marte.</p>
+                            <p><strong>ESA (Europa):</strong> JUICE, Euclid, módulo Orion.</p>
+                            <p><strong>ISRO (Índia):</strong> Gaganyaan, Chandrayaan-3.</p>
+                            <p><strong>Brasil:</strong> Veículo lançador orbital, CLA, Selenita, Space Farming.</p>
+                            <div class="highlight-box">🌐 Setor espacial: US$ 400 bi/ano. Empresas: SpaceX, Blue Origin, Rocket Lab, Virgin Galactic.</div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Questão exemplo nível 4 -->
             <div class="tip-card">
                 <span class="tip-icon">📝</span>
                 <p><strong>Exemplo OBA - Nível 4:</strong> Uma estrela tem magnitude aparente m = +12 e está a 100 parsecs. Qual sua magnitude absoluta? <br> <em>Resposta: M = m – 5·log₁₀(d/10) = 12 – 5·log₁₀(10) = 12 – 5 = +7.</em></p>
             </div>
-
             <div class="motivational-card">
                 <span class="emoji-big">🌠</span>
                 <p class="quote">"O impossível é apenas uma questão de tempo. A física nos mostra o caminho, a engenharia constrói a ponte."</p>
             </div>
         </div>
 
-        <!-- Footer -->
         <footer>
             <p>📚 Guia de estudos para a Olimpíada Brasileira de Astronomia e Astronáutica | Conteúdo especialista</p>
             <p style="margin-top:4px;">👨‍🏫 <strong>Professor Anderson Daniel</strong></p>
@@ -1002,43 +1050,60 @@
         </footer>
     </div>
 
+    <!-- Modal Artemis -->
+    <div class="modal-overlay" id="artemisModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h2 style="color:#f0c850; text-align:center;">🌕 Projeto Artemis – Guia Completo</h2>
+            <p><strong>Programa Artemis (NASA):</strong> Retorno humano à Lua, primeiro pouso no polo sul, presença sustentável e preparação para Marte. Parceiros: SpaceX, Blue Origin, ESA, Brasil (Acordos Artemis).</p>
+            <table>
+                <tr><th>Missão</th><th>Ano</th><th>Tripulação</th><th>Descrição</th></tr>
+                <tr><td>Artemis I</td><td>2022</td><td>Não tripulada</td><td>Órbita lunar, teste de sistemas</td></tr>
+                <tr><td>Artemis II</td><td>2026</td><td>Reid Wiseman, Victor Glover, Christina Koch, Jeremy Hansen</td><td>Sobrevoo da Lua, recorde de distância (406.771 km)</td></tr>
+                <tr><td>Artemis III</td><td>2027</td><td>Não tripulada (teste)</td><td>Acoplagem orbital com módulos lunares</td></tr>
+                <tr><td>Artemis IV</td><td>2028</td><td>A definir</td><td>Primeiro pouso lunar, módulo I-Hab</td></tr>
+            </table>
+            <p><strong>Módulos de pouso:</strong> Starship HLS (SpaceX) – 35 m altura. Blue Moon Mark 2 (Blue Origin) – Artemis V.</p>
+            <p><strong>Estação Gateway:</strong> Posto avançado orbital lunar, módulo I-Hab na Artemis IV.</p>
+            <p><strong>Brasil:</strong> Acordos Artemis (2021), Space Farming (Embrapa), nanossatélite Selenita (ITA), investimento em veículo lançador orbital.</p>
+            <p><strong>Curiosidades:</strong> Polo sul lunar possui gelo de água. Orçamento: ~US$ 93 bilhões.</p>
+            <p style="font-size:0.8rem; color:#a0a8b8;">Fontes: NASA, AEB, Relatórios OIG.</p>
+        </div>
+    </div>
+
     <script>
         (function() {
-            // Estrelas de fundo
-            const starsContainer = document.getElementById('starsContainer');
+            const sc = document.getElementById('starsContainer');
             for (let i = 0; i < 80; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star-dot');
+                const s = document.createElement('div');
+                s.classList.add('star-dot');
                 const size = Math.random() * 2.5 + 0.8;
-                star.style.width = size + 'px';
-                star.style.height = size + 'px';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.setProperty('--dur', (Math.random() * 4 + 2) + 's');
-                star.style.setProperty('--delay', (Math.random() * 5) + 's');
-                starsContainer.appendChild(star);
+                s.style.width = size + 'px';
+                s.style.height = size + 'px';
+                s.style.left = Math.random() * 100 + '%';
+                s.style.top = Math.random() * 100 + '%';
+                s.style.setProperty('--dur', (Math.random() * 4 + 2) + 's');
+                s.style.setProperty('--delay', (Math.random() * 5) + 's');
+                sc.appendChild(s);
             }
-
-            // Navegação
-            const navButtons = document.querySelectorAll('.nav-btn');
-            const levelContents = document.querySelectorAll('.level-content');
-            navButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const target = btn.getAttribute('data-level');
-                    navButtons.forEach(b => b.classList.remove('active'));
-                    levelContents.forEach(lc => lc.classList.remove('active'));
-                    btn.classList.add('active');
-                    document.getElementById(`level-${target}`).classList.add('active');
+            const btns = document.querySelectorAll('.nav-btn');
+            const levels = document.querySelectorAll('.level-content');
+            btns.forEach(b => {
+                b.addEventListener('click', () => {
+                    const l = b.getAttribute('data-level');
+                    btns.forEach(x => x.classList.remove('active'));
+                    levels.forEach(x => x.classList.remove('active'));
+                    b.classList.add('active');
+                    document.getElementById('level-' + l).classList.add('active');
                 });
             });
-
-            // Accordion
-            document.querySelectorAll('.accordion-header').forEach(header => {
-                header.addEventListener('click', () => {
-                    const item = header.parentElement;
-                    item.classList.toggle('open');
-                });
+            document.querySelectorAll('.accordion-header').forEach(h => {
+                h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
             });
+            const modal = document.getElementById('artemisModal');
+            document.getElementById('openArtemisModal').addEventListener('click', () => modal.style.display = 'flex');
+            document.getElementById('closeModal').addEventListener('click', () => modal.style.display = 'none');
+            window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
         })();
     </script>
 </body>
